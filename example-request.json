@@ -1,0 +1,166 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "image": "99924880.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "10": {
+        "inputs": {
+          "mask": [
+            "11",
+            0
+          ]
+        },
+        "class_type": "MaskPreview",
+        "_meta": {
+          "title": "MaskPreview"
+        }
+      },
+      "11": {
+        "inputs": {
+          "mask": [
+            "68",
+            1
+          ]
+        },
+        "class_type": "InvertMask",
+        "_meta": {
+          "title": "InvertMask"
+        }
+      },
+      "28": {
+        "inputs": {
+          "value": true,
+          "dinov3": [
+            "67",
+            0
+          ],
+          "image": [
+            "68",
+            0
+          ],
+          "mask": [
+            "68",
+            1
+          ]
+        },
+        "class_type": "Trellis2GetConditioning",
+        "_meta": {
+          "title": "Trellis2GetConditioning"
+        }
+      },
+      "62": {
+        "inputs": {
+          "value": 500000,
+          "trimesh": [
+            "65",
+            0
+          ],
+          "voxelgrid": [
+            "65",
+            1
+          ]
+        },
+        "class_type": "Trellis2ExportGLB",
+        "_meta": {
+          "title": "Trellis2ExportGLB"
+        }
+      },
+      "64": {
+        "inputs": {
+          "filename": "F:/trellis-comfyui/ComfyUI_windows_portable/ComfyUI/output/trellis2_20260101_123629.glb",
+          "model_file": [
+            "62",
+            0
+          ]
+        },
+        "class_type": "Preview3D",
+        "_meta": {
+          "title": "Preview3D"
+        }
+      },
+      "65": {
+        "inputs": {
+          "value": 43,
+          "texture_pipeline": [
+            "67",
+            2
+          ],
+          "conditioning": [
+            "28",
+            0
+          ],
+          "shape_slat": [
+            "66",
+            0
+          ],
+          "subs": [
+            "66",
+            1
+          ]
+        },
+        "class_type": "Trellis2ShapeToTexturedMesh",
+        "_meta": {
+          "title": "Trellis2ShapeToTexturedMesh"
+        }
+      },
+      "66": {
+        "inputs": {
+          "value": 42,
+          "shape_pipeline": [
+            "67",
+            1
+          ],
+          "conditioning": [
+            "28",
+            0
+          ]
+        },
+        "class_type": "Trellis2ImageToShape",
+        "_meta": {
+          "title": "Trellis2ImageToShape"
+        }
+      },
+      "67": {
+        "inputs": {
+          "text": "1536_cascade"
+        },
+        "class_type": "LoadTrellis2Models",
+        "_meta": {
+          "title": "LoadTrellis2Models"
+        }
+      },
+      "68": {
+        "inputs": {
+          "value": true,
+          "image": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "Trellis2RemoveBackground",
+        "_meta": {
+          "title": "Trellis2RemoveBackground"
+        }
+      },
+      "69": {
+        "inputs": {
+          "images": [
+            "28",
+            1
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      }
+    }
+  }
+}
